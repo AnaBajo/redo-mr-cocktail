@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="info">
+    <div class="title">
+      <h2><%= @cocktail.name  %></h2>
+    </div>
+
+
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col">steps</th>
+          <th scope="col">Ingredient</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cocktail.doses.each do |dose|  %>
+          <tr>
+            <th scope="row">•</th>
+            <td><%= dose.ingredient.name %></td>
+            <td><%= dose.description %></td>
+            <td><%= link_to 'delete dose', dose_path(dose), method: :delete %></td>
+          </tr>
+        <% end  %>
+      </tbody>
+    </table>
+
+<!--
+    <% @cocktail.doses.each do |dose|  %>
+      <div class="specs ">
+        <p><%= dose.ingredient.name %></p>
+        <p><%= dose.description %></p>
+        <%= link_to 'delete dose', dose_path(dose), method: :delete %>
+      </div>
+    <% end  %>
+   -->
+  </div>
+
+
+  <div class="form">
+    <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+  </div>
+</div>
+
+
+

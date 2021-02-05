@@ -1,0 +1,15 @@
+<div class="d-flex container banner">
+  <div class="block">
+    <h1>PINK DRINKS</h1>
+    <h5><%= link_to "add your pinky to the list", new_cocktail_path(@cocktail) %></h5>
+  </div>
+</div>
+
+<div class="container cards">
+  <% @cocktails.each do |c| %>
+    <div class="card">
+      <h4 class="card-title"><%= link_to c.name, c %></h4>
+    </div>
+  <% end %>
+</div>
+
