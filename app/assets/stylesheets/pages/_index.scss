@@ -1,0 +1,72 @@
+// Import page-specific CSS files here.
+@import "home";
+
+body {
+  background: #DA4453;  /* fallback for old browsers */
+  background: linear-gradient(to right, #89216B, #DA4453); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  // background: #b24592;
+  // background: linear-gradient(to right, #b24592, #f15f79);
+
+}
+.banner {
+  height: 30vh;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: semi-bold;
+  color: #240046;
+  text-shadow: 5px 5px 7px #89023e;
+  font-family: 'Monoton';
+}
+
+h5 {
+  text-align: center;
+  text-transform: none;
+  font-family: Raleway;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1536935338788-846bb9981813?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1286&q=80");
+  // background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+}
+
+
+.card-title {
+  color: white;
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
