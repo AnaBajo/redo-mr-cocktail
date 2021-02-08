@@ -3,8 +3,7 @@
     <div class="title">
       <h2><%= @cocktail.name  %></h2>
     </div>
-
-
+    <%= link_to "delete cocktail", cocktail_path(@cocktail), method: :delete %>
     <table class="table table-sm">
       <thead>
         <tr>
@@ -25,22 +24,18 @@
         <% end  %>
       </tbody>
     </table>
-
-<!--
-    <% @cocktail.doses.each do |dose|  %>
-      <div class="specs ">
-        <p><%= dose.ingredient.name %></p>
-        <p><%= dose.description %></p>
-        <%= link_to 'delete dose', dose_path(dose), method: :delete %>
-      </div>
-    <% end  %>
-   -->
   </div>
 
+  <div class="d-flex justify-content-between">
+    <div class="form ingr_dosage">
+      <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+    </div>
 
-  <div class="form">
-    <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+    <div class="cocktail_img">
+      <%= cl_image_tag @cocktail.photo.key, height: 315, width: 400, crop: :fill  %>
+    </div>
   </div>
+
 </div>
 
 
