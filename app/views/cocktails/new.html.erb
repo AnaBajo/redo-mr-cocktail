@@ -1,10 +1,33 @@
 <header>Create a pink drink!</header>
 
-
+<!--
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name %>
   <%= f.input :photo, as: :file %>
   <%= f.submit "add name and photo!" %>
 <% end %>
+ -->
 
+
+<%= simple_form_for(@cocktail) do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.input :photo, as: :file %>
+  </div>
+
+
+    <%= f.fields_for :doses do |dose| %>
+      <div>
+        <%= dose.label :description %>
+        <%= dose.text_field :description %>
+        <%= dose.label :ingredient_id %>
+        <%= dose.number_field :ingredient_id %>
+      </div>
+
+    <% end %>
+      <%= f.label :submit%><br>
+      <%= f.submit %>
+<% end %>
 
