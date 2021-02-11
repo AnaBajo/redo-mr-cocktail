@@ -9,12 +9,6 @@ class Cocktail < ApplicationRecord
   # validates :ingredients, :pink?, :length => { :minimum => 1 }
 
   def pink?
-
-    # cocktail = Cocktail.find(params[:id])
-
-    # @ingredient = @cocktail.ingredient
-    # @ingredient = @cocktail[:ingredient_id]
-    # @ingredient.cocktail = @ingredient
     ingredients = self.ingredients
     ingredients.any? {|ingr| pinkredients.include?(ingr.name) }
   end
