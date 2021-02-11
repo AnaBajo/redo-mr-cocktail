@@ -15,11 +15,13 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    if @cocktail.save
-      redirect_to cocktail_path(@cocktail)
-    else
-      render 'new'
-    end
+    # if @cocktail.save
+    #   redirect_to cocktail_path(@cocktail)
+    # else
+    #   render 'new'
+    # end
+
+    @cocktail.save ? redirect_to(cocktail_path(@cocktail)) : render(:new)
   end
 
   def destroy
@@ -27,7 +29,6 @@ class CocktailsController < ApplicationController
     @cocktail.destroy
     redirect_to cocktails_path
   end
-
 
   private
 
