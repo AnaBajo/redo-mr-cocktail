@@ -1,13 +1,14 @@
 <div class="form">
   <h3>Add ingredients and their dosage to your cocktail! </h3>
 
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.association :ingredient %>
-    <%= f.input :description %>
+  <%= simple_form_for [@cocktail, @dose] do |cd| %>
+    <%= cd.association :ingredient %>
+    <%= cd.input :description %>
     <div class="d-flex">
-      <%= f.button :submit, 'add to cocktail', class: "btn btn-primary"  %>
+      <%= cd.button :submit, 'add dose', class: "btn btn-primary"  %>
   <% end %>
       <%= link_to 'back', cocktails_path, class: "btn btn-primary" %>
     </div>
 </div>
+
 
