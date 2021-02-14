@@ -18,11 +18,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new(cocktail_params)
     @dose = @cocktail.doses.build(ingredient_id: params[:cocktail][:doses_attributes]["0"][:ingredient_id], description: params[:cocktail][:doses_attributes]["0"][:description])
 
-    if @cocktail.save
-      redirect_to cocktail_path(@cocktail)
-    else
-      render 'new'
-    end
+    @cocktail.save ? redirect_to(cocktail_path(@cocktail)) : render(:new)
   end
 
   def destroy
