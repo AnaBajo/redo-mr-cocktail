@@ -5,5 +5,4 @@ class Ingredient < ApplicationRecord
   # accepts_nested_attributes_for :doses
 
   validates :name, presence: true, uniqueness: true
-
 end
